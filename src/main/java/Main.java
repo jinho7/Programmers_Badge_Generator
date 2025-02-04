@@ -147,7 +147,7 @@ public class Main {
                                 "<g><path style=\"opacity:1\" fill=\"#a4c8ff\" d=\"M 520.5,190.5 C 519.089,192.539 517.089,193.539 514.5,193.5C 516.181,191.992 518.181,190.992 520.5,190.5 Z\"/></g>\n" +
 
                                 // Adding a rounded rectangle for the background
-                                "<rect x=\"0\" y=\"0\" width=\"551\" height=\"217\" rx=\"20\" ry=\"20\" fill=\"#fefefe\" stroke=\"#0078ff\" stroke-width=\"2\"/>" 
+                                "<rect x=\"0\" y=\"0\" width=\"551\" height=\"217\" rx=\"20\" ry=\"20\" fill=\"#fefefe\" stroke=\"#0078ff\" stroke-width=\"2\"/>" +
                     
                                 "<text text-anchor=\"middle\" x=\"80\" y=\"45\" class=\"title\" style=\"fill:#0078ff;\" stroke=\"#none\" stroke-width=\"1\" >정복 중인 레벨</text>" +
                                 "<text text-anchor=\"middle\" x=\"60\" y=\"85\" class=\"desc\" style=\"fill:#000000;\" stroke=\"#none\" stroke-width=\"1\" >%s</text>" +
