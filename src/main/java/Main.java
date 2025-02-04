@@ -78,35 +78,48 @@ public class Main {
                 Object rank = ((Map<String, Object>) myData.get("ranking")).get("rank");
 
                 // 데이터를 String 타입으로 변환하여 안전하게 사용
-                String svgContent = String.format(
+               String svgContent = String.format(
                     "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
                     "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n" +
-                    "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"100%%\" height=\"100%%\" viewBox=\"0 0 551 217\" style=\"shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd\">" +
+                    "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"551px\" height=\"217px\" style=\"shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">" +
                     "<style>" +
                     ".title {" +
                     "fill: #434343;" +
-                    "font-size: 16px;" +
+                    "font-size: 1rem;" +
                     "line-height: 1.5rem;" +
                     "font-weight: bold;" +
                     "font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;" +
                     "}" +
                     ".desc {" +
                     "fill: #434343;" +
-                    "font-size: 24px;" +
+                    "font-size: 2.5rem;" +
                     "font-weight: bold;" +
                     "line-height: 1.5rem;" +
                     "font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;" +
                     "}" +
                     ".desc-2 {" +
                     "fill: #434343;" +
-                    "font-size: 14px;" +
+                    "font-size: 1rem;" +
                     "font-weight: bold;" +
                     "line-height: 1.5rem;" +
                     "font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;" +
                     "}" +
+                    ".text, .desc {" +
+                    "animation: twinkling 4s ease-in-out infinite;" +
+                    "}" +
+                    "@keyframes twinkling {" +
+                    "40%% { opacity: 1; }" +
+                    "50%% { opacity: 0.5; }" +
+                    "60%% { opacity: 1; }" +
+                    "70%% { opacity: 0.5; }" +
+                    "80%% { opacity: 1; }" +
+                    "}" +
                     "</style>" +
                 
-                    "<g><path style=\"opacity:1\" fill=\"#fefefe\" d=\"M -0.5,-0.5 C 183.167,-0.5 366.833,-0.5 550.5,-0.5C 550.5,71.8333 550.5,144.167 550.5,216.5C 366.833,216.5 183.167,216.5 -0.5,216.5C -0.5,212.167 -0.5,207.833 -0.5,203.5C 1.14011,204.32 2.80678,205.153 4.5,206C 88.1667,206.667 171.833,206.667 255.5,206C 259,205.167 261.167,203 262,199.5C 262.667,175.167 262.667,150.833 262,126.5C 261.167,123 259,120.833 255.5,120C 171.833,119.333 88.1667,119.333 4.5,120C 2.80678,120.847 1.14011,121.68 -0.5,122.5C -0.5,115.167 -0.5,107.833 -0.5,100.5C 1.14011,101.32 2.80678,102.153 4.5,103C 88.1667,103.667 171.833,103.667 255.5,103C 259,102.167 261.167,100 262,96.5C 262.667,72.1667 262.667,47.8333 262,23.5C 261.167,20 259,17.8333 255.5,17C 171.833,16.3333 88.1667,16.3333 4.5,17C 2.80678,17.8466 1.14011,18.6799 -0.5,19.5C -0.5,12.8333 -0.5,6.16667 -0.5,-0.5 Z\"/></g>\n" +
+                    // Adding a rounded rectangle for the background
+                    "<rect x=\"0\" y=\"0\" width=\"551\" height=\"217\" rx=\"20\" ry=\"20\" fill=\"#fefefe\" stroke=\"#0078ff\" stroke-width=\"2\"/>" +
+                
+                    // Labels and Text
                     "<text text-anchor=\"middle\" x=\"80\" y=\"45\" class=\"title\" style=\"fill:#0078ff;\" stroke=\"#none\" stroke-width=\"1\" >정복 중인 레벨</text>" +
                     "<text text-anchor=\"middle\" x=\"60\" y=\"85\" class=\"desc\" style=\"fill:#000000;\" stroke=\"#none\" stroke-width=\"1\" >%s</text>" +
                     "<text text-anchor=\"middle\" x=\"100\" y=\"85\" class=\"desc-2\" style=\"fill:#434343;\" stroke=\"#none\" stroke-width=\"1\" >레벨</text>" +
@@ -122,6 +135,7 @@ public class Main {
                     "<text text-anchor=\"middle\" x=\"340\" y=\"150\" class=\"title\" style=\"fill:#0078ff;\" stroke=\"#none\" stroke-width=\"1\" >나의 랭킹</text>" +
                     "<text text-anchor=\"middle\" x=\"370\" y=\"190\" class=\"desc\" style=\"fill:#000000;\" stroke=\"#none\" stroke-width=\"1\" >%s</text>" +
                     "<text text-anchor=\"middle\" x=\"450\" y=\"190\" class=\"desc-2\" style=\"fill:#434343;\" stroke=\"#none\" stroke-width=\"1\" >위</text>" +
+                
                     "</svg>",
                     level != null ? level.toString() : "",
                     score != null ? score.toString() : "",
