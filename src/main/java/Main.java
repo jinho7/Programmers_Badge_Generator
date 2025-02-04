@@ -77,8 +77,7 @@ public class Main {
                 Object solved = ((Map<String, Object>) myData.get("codingTest")).get("solved");
                 Object rank = ((Map<String, Object>) myData.get("ranking")).get("rank");
 
-                // 데이터를 String 타입으로 변환하여 안전하게 사용
-               String svgContent = String.format(
+                String svgContent = String.format(
                     "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
                     "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\">\n" +
                     "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"551px\" height=\"217px\" style=\"shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd\" xmlns:xlink=\"http://www.w3.org/1999/xlink\">" +
@@ -135,13 +134,13 @@ public class Main {
                     "<text text-anchor=\"middle\" x=\"340\" y=\"150\" class=\"title\" style=\"fill:#0078ff;\" stroke=\"#none\" stroke-width=\"1\" >나의 랭킹</text>" +
                     "<text text-anchor=\"middle\" x=\"370\" y=\"190\" class=\"desc\" style=\"fill:#000000;\" stroke=\"#none\" stroke-width=\"1\" >%s</text>" +
                     "<text text-anchor=\"middle\" x=\"450\" y=\"190\" class=\"desc-2\" style=\"fill:#434343;\" stroke=\"#none\" stroke-width=\"1\" >위</text>" +
-                
                     "</svg>",
                     level != null ? level.toString() : "",
                     score != null ? score.toString() : "",
                     solved != null ? solved.toString() : "",
                     rank != null ? rank.toString() : ""
                 );
+
 
 
                 Path currentPath = Paths.get("").toAbsolutePath();
