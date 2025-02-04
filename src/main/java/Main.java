@@ -165,7 +165,7 @@ public class Main {
 
 
                                 "</svg>",
-                        level != null ? level.toString() : "",
+                        level = "4",
                         score != null ? score.toString() : "",
                         solved != null ? solved.toString() : "",
                         rank != null ? rank.toString() : ""
